@@ -25,7 +25,7 @@ const CryptoDetails = () => {
   const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
   console.log(data);
-  const cryptoDetails = data?.data?.coin;
+  const cryptoDetails = data?.data?.coinId;
 
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
@@ -152,6 +152,29 @@ const CryptoDetails = () => {
             </Col>
           ))}
           ;
+        </Col>
+      </Col>
+      <Col className="coin-desc-link">
+        <Row className="coin-desc">
+          <Title className="coin-details-heading" level={3}>
+            What is {CryptoDetails?.name}
+            {/*{HTMLReactParser(cryptoDetails?.description)}*/}
+          </Title>
+        </Row>
+        <Col className="coin-links">
+          <Title level={3} className="coin-details-heading">
+            {cryptoDetails?.name} Links.
+          </Title>
+          {cryptoDetails?.links?.map((link) => (
+            <Row className="coin-link" key={link.name}>
+              <Title level={5} className="link-name">
+                {link.type}
+              </Title>
+              <a href={link.url} target="_blank" rel="noreferrer">
+                {link.name}
+              </a>
+            </Row>
+          ))}
         </Col>
       </Col>
     </Col>
