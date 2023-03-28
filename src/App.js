@@ -1,11 +1,8 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { Layout, Space, Typography } from "antd";
-import { useParams } from "react-router-dom";
-
 import {
   Navbar,
-  Exchanges,
   Homepage,
   Cryptocurrencies,
   CryptoDetails,
@@ -23,15 +20,16 @@ const App = () => {
         <Layout>
           <div className="routes">
             <Routes>
-              <Route exact path="/" element={<Homepage />} />{" "}
-              <Route exact path="/exchanges" element={<Exchanges />} />{" "}
+              <Route path="/" element={<Homepage />} />{" "}
               <Route
-                exact
                 path="/cryptocurrencies"
-                element={<Cryptocurrencies />}
+                element={<Cryptocurrencies simplified={undefined} />}
               />{" "}
-              <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />
-              <Route exact path="/news" element={<News />} />{" "}
+              <Route path="/crypto/:coinId" element={<CryptoDetails />} />
+              <Route
+                path="/news"
+                element={<News simplified={undefined} />}
+              />{" "}
             </Routes>{" "}
           </div>{" "}
         </Layout>{" "}
@@ -40,7 +38,7 @@ const App = () => {
             level={5}
             style={{ color: "white", textAlign: "center" }}
           >
-            Kryptoverse <br />
+            KryptoWorld <br />
             All Rights Reserved.{" "}
           </Typography.Title>{" "}
           <Space>

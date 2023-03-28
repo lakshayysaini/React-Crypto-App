@@ -128,7 +128,7 @@ const CryptoDetails = () => {
       </Select>
       <LineChart
         coinHistory={coinHistory}
-        currentPrice={millify(cryptoDetails?.price)}
+        currentPrice={millify(cryptoDetails.price)}
         coinName={cryptoDetails?.name}
       />
       <Col className="stats-container">
@@ -177,14 +177,14 @@ const CryptoDetails = () => {
         <Row className="coin-desc">
           <Title level={3} className="coin-details-heading">
             What is {cryptoDetails.name}?
+            {HTMLReactParser(cryptoDetails.description)}
           </Title>
-          {HTMLReactParser(cryptoDetails.description)}
         </Row>
         <Col className="coin-links">
           <Title level={3} className="coin-details-heading">
             {cryptoDetails.name} Links
           </Title>
-          {cryptoDetails.links?.map((link) => (
+          {cryptoDetails.links.map((link) => (
             <Row className="coin-link" key={link.name}>
               <Title level={5} className="link-name">
                 {link.type}
