@@ -38,8 +38,8 @@ const App = () => {
             level={5}
             style={{ color: "white", textAlign: "center" }}
           >
-            KryptoWorld <br />
-            All Rights Reserved.{" "}
+            CryptoWorld by Lakshayyy <br />
+            2023 All Rights Reserved.{" "}
           </Typography.Title>{" "}
         </div>{" "}
       </div>{" "}
